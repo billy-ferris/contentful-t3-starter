@@ -1,17 +1,20 @@
 import { GraphQLClient } from "graphql-request";
+import { endpoint } from "codegen";
 
 import { getSdk } from "~/lib/__generated/sdk";
-import { endpoint } from "codegen";
+
+// TODO: create path alias
+import contentful from "../../contentful.config";
 
 const graphQlClient = new GraphQLClient(endpoint, {
   headers: {
-    Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+    Authorization: `Bearer ${contentful.access_token}`,
   },
 });
 
 const previewGraphQlClient = new GraphQLClient(endpoint, {
   headers: {
-    Authorization: `Bearer ${process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN}`,
+    Authorization: `Bearer ${contentful.preview_access_token}`,
   },
 });
 
