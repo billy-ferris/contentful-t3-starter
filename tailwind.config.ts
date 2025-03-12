@@ -4,10 +4,19 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 export default {
   content: ["./src/**/*.tsx"],
   theme: {
+    // Rhunda is only available in normal and medium weights, don't use weights with Suisse Works
+    fontWeight: {
+      normal: "400",
+      medium: "500",
+    },
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        sans: ["var(--font-runda)", ...fontFamily.sans],
+        serif: ["var(--font-suisse-works-book-italic)", ...fontFamily.serif],
+        runda: "var(--font-runda)",
+        "suisse-works": "var(--font-suisse-works-book-italic)",
       },
+      fontSize: {},
       colors: {
         primary: {
           200: "var(--color-primary-200)",

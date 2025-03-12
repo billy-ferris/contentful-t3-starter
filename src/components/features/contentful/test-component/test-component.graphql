@@ -1,0 +1,13 @@
+fragment HeRdTestFields on HeRdTestTestingToBeDeleted {
+    __typename,
+    sys {
+        id
+    },
+    testField
+}
+
+query heRdTest($id: String!, $locale: String, $preview: Boolean) {
+    heRdTestTestingToBeDeleted(id: $id, locale: $locale, preview: $preview) {
+        ...HeRdTestFields
+    }
+}

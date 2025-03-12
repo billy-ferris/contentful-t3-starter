@@ -1,6 +1,7 @@
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
-import { GeistSans } from "geist/font/sans";
+
+import { runda, suisseWorksBookItalic } from "~/lib/fonts";
 
 import "~/styles/globals.css";
 
@@ -16,7 +17,10 @@ export default function RootLayout({
   const locale = "en-US";
 
   return (
-    <html lang={locale} className={`${GeistSans.variable}`}>
+    <html
+      lang={locale}
+      className={`${runda.variable} ${suisseWorksBookItalic.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
